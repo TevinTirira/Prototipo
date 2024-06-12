@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es" class="bg-gray-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comida Rápida Accesible</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Estilos para la paleta de colores principal */
+        .main-palette {
+            --primary: #38a169;
+            --primary-dark: #2f855a;
+            --secondary: #2d3748;
+            --background: #f7fafc;
+            --text: #2d3748;
+            --alert: #e53e3e;
+        }
+
+        /* Estilos para la paleta de colores para daltonismo */
+        .daltonism-palette {
+            --primary: #3182ce;
+            --primary-dark: #2b6cb0;
+            --secondary: #2d3748;
+            --background: #f7fafc;
+            --text: #2d3748;
+            --alert: #d69e2e;
+        }
+
+        /* Aplicar colores en la raíz */
+        :root {
+            --primary: #38a169;
+            --primary-dark: #2f855a;
+            --secondary: #2d3748;
+            --background: #f7fafc;
+            --text: #2d3748;
+            --alert: #e53e3e;
+        }
+
+        /* Aplicar paleta de colores seleccionada */
+        .palette {
+            background-color: var(--background);
+            color: var(--text);
+        }
+        .palette .bg-primary {
+            background-color: var(--primary);
+        }
+        .palette .bg-primary-dark {
+            background-color: var(--primary-dark);
+        }
+        .palette .bg-alert {
+            background-color: var(--alert);
+        }
+        .palette .text-primary {
+            color: var(--primary);
+        }
+        .palette .text-primary-dark {
+            color: var(--primary-dark);
+        }
+        .palette .text-alert {
+            color: var(--alert);
+        }
+
+        /* Estilos para el fondo */
+        body {
+            background-image: url('/public/img/pexels-sebastian-189349.jpg'); /* Reemplaza con la URL de tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="palette main-palette font-sans bg-gray-100">
+
+    <!-- Cabecera -->
+    <header class="bg-primary text-white p-4 bg-opacity-75">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl">Restaurante Carne al Fuego</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#menu" class="underline">Menú</a></li>
+                    <li><a href="#contacto" class="underline">Contacto</a></li>
+                    <li>
+                        <button id="toggle-palette" class="bg-primary-dark text-white px-4 py-2 rounded">
+                            Cambiar Paleta
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección de Menú -->
+    <main id="menu" class="p-4 bg-white bg-opacity-75 rounded shadow-md mt-4 mx-auto max-w-4xl">
+        <h2 class="text-2xl mb-4">Nuestro Menú</h2>
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Ejemplo de elemento de comida -->
+            <article class="bg-white p-4 rounded shadow-md bg-opacity-90">
+                <img src="/public/img/hamburguesa-queso-receta.jpg" alt="Hamburguesa con queso" class="w-full h-48 object-cover rounded">
+                <h3 class="text-xl mt-2">Hamburguesa con Queso</h3>
+                <p class="mt-1">Deliciosa hamburguesa con queso, lechuga y tomate.</p>
+                <button class="bg-primary text-white px-4 py-2 rounded mt-2">Ordenar</button>
+            </article>
+            <!-- Añadir más elementos de comida aquí -->
+            <article class="bg-white p-4 rounded shadow-md bg-opacity-90">
+                <img src="/public/img/hamburguesa-queso-receta.jpg" alt="Hamburguesa con queso" class="w-full h-48 object-cover rounded">
+                <h3 class="text-xl mt-2">Hamburguesa con Queso</h3>
+                <p class="mt-1">Deliciosa hamburguesa con queso, lechuga y tomate.</p>
+                <button class="bg-primary text-white px-4 py-2 rounded mt-2">Ordenar</button>
+            </article>
+            <!-- Añadir más elementos de comida aquí -->
+            <article class="bg-white p-4 rounded shadow-md bg-opacity-90">
+                <img src="/public/img/hamburguesa-queso-receta.jpg" alt="Hamburguesa con queso" class="w-full h-48 object-cover rounded">
+                <h3 class="text-xl mt-2">Hamburguesa con Queso</h3>
+                <p class="mt-1">Deliciosa hamburguesa con queso, lechuga y tomate.</p>
+                <button class="bg-primary text-white px-4 py-2 rounded mt-2">Ordenar</button>
+        </section>
+    </main>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="p-4 bg-white bg-opacity-75 mt-8 rounded shadow-md mx-auto max-w-4xl">
+        <h2 class="text-2xl mb-4">Contacto</h2>
+        <form action="#" method="post">
+            <div class="mb-4">
+                <label for="nombre" class="block text-sm font-medium">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary">
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-sm font-medium">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary">
+            </div>
+            <div class="mb-4">
+                <label for="mensaje" class="block text-sm font-medium">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"></textarea>
+            </div>
+            <button type="submit" class="bg-primary text-white px-4 py-2 rounded">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="bg-primary text-white p-4 mt-8 bg-opacity-75">
+        <p>&copy; 2024 Restaurante Carne al Fuego</p>
+    </footer>
+
+    <!-- JavaScript para controles de accesibilidad -->
+    <script>
+        document.getElementById('toggle-palette').addEventListener('click', function() {
+            const bodyClassList = document.body.classList;
+            if (bodyClassList.contains('main-palette')) {
+                bodyClassList.remove('main-palette');
+                bodyClassList.add('daltonism-palette');
+            } else {
+                bodyClassList.remove('daltonism-palette');
+                bodyClassList.add('main-palette');
+            }
+        });
+    </script>
+</body>
+</html>
